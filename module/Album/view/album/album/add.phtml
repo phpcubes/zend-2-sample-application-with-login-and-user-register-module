@@ -1,0 +1,95 @@
+<?php
+// module/Album/view/album/album/add.phtml:
+
+$title = 'Add new album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('album', array('action' => 'add')));
+$form->prepare();
+echo $this->form()->openTag($form);
+
+?>
+<div class="control-group" style="width:300px;">
+    <?php echo $this->formLabel($form->get('title')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formInput($form->get('title')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('title')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('artist')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formInput($form->get('artist')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('artist')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('gender')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formSelect($form->get('gender')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('gender')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('hobby')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formMultiCheckbox($form->get('hobby')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('hobby')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('email')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formInput($form->get('email')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('email')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('birth')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formInput($form->get('birth')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('birth')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('address')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formTextarea($form->get('address')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('address')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php echo $this->formLabel($form->get('direction')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formRadio($form->get('direction')); ?>
+    </div>
+     <div class="error">
+ 		<?php echo $this->formElementErrors($form->get('direction')); ?>
+    </div>
+</div>
+<div class="control-group">
+    <?php //echo $this->formLabel($form->get('submit')->setLabelAttributes(array('class'=>'control-label'))); ?>
+    <div class="controls">
+        <?php echo $this->formInput($form->get('submit')); ?>
+    </div>
+
+</div>
+<?php 
+echo $this->form()->closeTag();
